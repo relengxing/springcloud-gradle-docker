@@ -12,4 +12,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka:7000/eureka/
+      defaultZone: http://client-service:7000/eureka/
