@@ -2,7 +2,7 @@ app:
   environment: default
 
 server:
-    port: 7001
+    port: 7100
 logging:
   file: /tmp/client-log.log
   level: info

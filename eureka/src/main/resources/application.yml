@@ -5,7 +5,7 @@ eureka:
         serviceUrl:
             defaultZone: http://localhost:${server.port}/eureka/
 server:
-    port: 6001
+    port: 7000
 logging:
   file: /tmp/eureka-log.log
   level: info
