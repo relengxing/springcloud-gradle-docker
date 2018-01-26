@@ -1,4 +1,4 @@
-package com.relengxing.deploy;
+package com.relengxing.deploy.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ public class HelloController {
     @Value(value = "${app.environment}")
     private String env;
 
-    @RequestMapping(value = "/dm",method = RequestMethod.GET)
+    @RequestMapping(value = "/",method = RequestMethod.GET)
     public String hello(){
         return "Hello client Service:" + env;
     }
