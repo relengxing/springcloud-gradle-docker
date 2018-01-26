@@ -1,3 +1,40 @@
 group 'com.relengxing'
 version '1.0-SNAPSHOT'
 
+
+buildscript {
+    ext {
+        gradleDockerVersion   = "1.2"
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("se.transmode.gradle:gradle-docker:${gradleDockerVersion}")
+    }
+}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'application'
+    apply plugin: 'docker'
+
+    docker {
+        dockerBinary = "sudo docker"
+    }
+    repositories {
+        mavenCentral()
+    }
+
+    task buildDocker(type: Docker, dependsOn: assemble, group: "custom") {
+        push = false
+        applicationName = jar.baseName
+        dockerfile = file('src/main/docker/Dockerfile')
+        doFirst {
+            copy {
+                from jar
+                into stageDir
+            }
+        }
+    }
+}

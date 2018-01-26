@@ -1,0 +1,13 @@
+app:
+  environment: default
+
+server:
+    port: 6401
+
+spring:
+  application:
+    name: client-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:6001/eureka/

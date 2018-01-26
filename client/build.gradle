@@ -18,8 +18,9 @@ group = 'com.relengxing'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+
 jar {
-	baseName = "jar-eureka"
+	baseName = "jar-client"
 	group    = "com.relengxing"
 	version  = "1.0.0"
 }
@@ -34,7 +35,8 @@ ext {
 }
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
