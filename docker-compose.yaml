@@ -1,14 +1,14 @@
 version: '3'
 services:
   eureka-service:
-    image: com.relengxing/eureka-service:0.0.1-SNAPSHOT
+    image: com.relengxing/eureka:0.0.1-SNAPSHOT
     restart: always
     ports:
       - "6001:6001"
     volumes:
       - /home/deployer/deploy_log:/tmp
   client-service:
-    image: com.relengxing/store-service:0.0.1-SNAPSHOT
+    image: com.relengxing/store:0.0.1-SNAPSHOT
     restart: always
     ports:
       - "7001:7001"
