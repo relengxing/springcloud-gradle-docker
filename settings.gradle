@@ -1,2 +1,4 @@
 rootProject.name = 'deploy'
 
+include 'eureka-service'
+include 'client-service'

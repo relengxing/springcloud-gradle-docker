@@ -2,11 +2,13 @@ app:
   environment: default
 
 server:
-    port: 6401
-
+    port: 7001
+logging:
+  file: /tmp/client-log.log
+  level: info
 spring:
   application:
-    name: client-service
+    name: dm-service
 eureka:
   client:
     service-url:

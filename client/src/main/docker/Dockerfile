@@ -1,5 +1,4 @@
 FROM java:openjdk-8-alpine
-MAINTAINER chaolee(chao.lee@percolata.com)
 
 VOLUME /tmp
 ADD jar-client-1.0.0.jar app.jar

@@ -1,19 +1,19 @@
 version: '3'
 services:
   eureka-service:
-    image: com.percolata/eureka-service:0.0.2-SNAPSHOT
+    image: com.relengxing/eureka-service:0.0.1-SNAPSHOT
     restart: always
     ports:
       - "6001:6001"
     volumes:
-      - /home/deployer/log_staffum:/tmp
-  store-service:
+      - /home/deployer/deploy_log:/tmp
+  client-service:
     image: com.percolata/store-service:0.0.1-SNAPSHOT
     restart: always
     ports:
-      - "6301:6301"
+      - "7001:7001"
     links:
       - eureka-service
     volumes:
-      - /home/deployer/log_staffum:/tmp
+      - /home/deployer/deploy_log:/tmp
 
